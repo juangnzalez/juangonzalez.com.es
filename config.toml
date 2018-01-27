@@ -8,20 +8,20 @@ theme = "minimo"
 disqusShortname = ""
 googleAnalytics = ""
 
-Paginate = 5
+Paginate = 1
 preserveTaxonomyNames = true
 
 enableRobotsTXT = true # generate robots.txt
 
 # Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
-pygmentsCodefences = true
+pygmentsCodefences = false
 
 # Missing translations will default to this content language
 defaultContentLanguage = "es"
 
 [params.info]
 description = "Blog sobre el uso y disfrute de la Línea de Comandos"
-title404 = "Nothing's here!"
+title404 = "Upsss!"
 
 [params.assets]
 favicon = "favicon.ico"
@@ -40,9 +40,9 @@ suffix = ""
 dateFormat = "2006, Jan 02"
 listDateFormat = "2006, Jan 02"
 hideEntryNavigation = ["page"] # boolean / array of sections
-recentPostsLength = 4
+recentPostsLength = 6
 hideSocialMenu = false
-showReadingTime = true
+showReadingTime = false
 noTermCloudShuffle = false
 homepageSections = ["recent_posts"]
 
@@ -56,7 +56,7 @@ page = "juangnzalez" # Twitter page username
 
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >
-titleSeparator = "•"
+titleSeparator = "-"
 
 [params.social]
 codepen = "MunifTanjim"
@@ -81,10 +81,10 @@ tag = "tags"
 page = "/:slug/"
 
 [[menu.main]]
-name = "Repo"
+name = " inicio "
 weight = -10
 identifier = "repository"
-url = "https://github.com/MunifTanjim/minimo"
+url = "http://juangonzalez.com.es"
 
 [blackfriday]
 hrefTargetBlank = true
