@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Montando un entorno para Oracle SQL - PL/SQL Motivación Estaba recordando, de tiempos de estudiante, las maniobras que tenía que hacer para conseguir un entorno con el que poder estudiar la asignatura de Oracle SQL y PL/SQL. A saber:
+ Hacer pasar la Debian de turno por una Red Hat. Variables de entorno, ampliar swap, arrancar aquel horrible instalador. 1 Rezar dos Padre nuestro para que todo terminara sin incidentes.'>
+
+<meta property='og:title' content='Montando un entorno para Oracle SQL-PL/SQL • Línea de Comandos'>
+<meta property='og:description' content='Montando un entorno para Oracle SQL - PL/SQL Motivación Estaba recordando, de tiempos de estudiante, las maniobras que tenía que hacer para conseguir un entorno con el que poder estudiar la asignatura de Oracle SQL y PL/SQL. A saber:
+ Hacer pasar la Debian de turno por una Red Hat. Variables de entorno, ampliar swap, arrancar aquel horrible instalador. 1 Rezar dos Padre nuestro para que todo terminara sin incidentes.'>
+<meta property='og:url' content='http://juangonzalez.com.es/posts/entorno_oracle_plsql/'>
+<meta property='og:site_name' content='Línea de Comandos'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-09-21T17:45:08&#43;02:00'/><meta property='article:modified_time' content='2017-09-21T17:45:08&#43;02:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@juangnzalez'>
+
+<meta name="generator" content="Hugo 0.34" />
+
+  <title>Montando un entorno para Oracle SQL-PL/SQL • Línea de Comandos</title>
+  <link rel='canonical' href='http://juangonzalez.com.es/posts/entorno_oracle_plsql/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.f0e8df71.css'><link rel='stylesheet' href='/css/custom.css'>
+</head>
+
+
+<body class='page type-posts'>
+  <div class='site'>
+
+    <a class='screen-reader' href='#main'></a>
+
+    <header id='header' class='header-container'>
+      <div class='header site-header'>
+        <nav id='main-menu' class='main-menu-container' aria-label=''>
+  <ul class='main-menu'>
+  <li>
+      <a href='https://github.com/MunifTanjim/minimo'>Repo</a>
+    </li>
+  
+  </ul>
+</nav>
+
+        <div class='header-info'>
+          
+          <p class='site-title title'>Línea de Comandos</p>
+          
+          <p class='site-description subtitle'>Blog sobre el uso y disfrute de la Línea de Comandos</p>
+        </div>
+      </div>
+    </header>
+
+
+<main id='main' class='main'>
+  <article lang='es' class='entry'>
+    <header class='header-container'>
+  <div class='header entry-header'>
+    <div class='header-info'>
+      <h1 class='title'>Montando un entorno para Oracle SQL-PL/SQL</h1>
+      
+
+    </div>
+    
+<div class='meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader'> </span>
+  <time class='date' datetime='2017-09-21T17:45:08&#43;02:00'>2017, Sep 21</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+    
+    
+
+    <div class='entry-content'>
+  
+
+<h1 id="montando-un-entorno-para-oracle-sql-pl-sql">Montando un entorno para Oracle SQL - PL/SQL</h1>
+
+<h2 id="motivación">Motivación</h2>
+
+<p>Estaba recordando, de tiempos de estudiante, las maniobras que tenía que hacer para conseguir un entorno con el que poder estudiar la asignatura de <em>Oracle SQL</em> y <em>PL/SQL</em>. A saber:</p>
+
+<ul>
+<li>Hacer pasar la <em>Debian</em> de turno por una <em>Red Hat</em>.</li>
+<li>Variables de entorno, ampliar <em>swap</em>, arrancar aquel horrible instalador. <sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></li>
+<li>Rezar dos <a href="https://es.wikipedia.org/wiki/Padre_nuestro" target="_blank">Padre nuestro</a> para que todo terminara sin incidentes.</li>
+<li>Rezar dos <a href="https://es.wikipedia.org/wiki/Avemar%C3%ADa" target="_blank">Avemarías</a> para que levantara el <em>listener</em>.</li>
+<li>Crear una base de datos.</li>
+<li>Por supuesto en este punto nos damos cuenta de que no elegimos instalar el <em>SQL*Plus</em> con lo que tocaba volver al instalador.
+<br /></li>
+</ul>
+
+<p>Después de todo esto ya no tenías tiempo ni ganas para estudiar.</p>
+
+<h2 id="vivan-los-contenedores">Vivan los contenedores</h2>
+
+<p>En este post intentaré describir los pasos para conseguir un pequeño entorno Oracle sobre el que, por ejemplo, podremos estudiar <em>PL/SQl</em>. Y en <strong>menos de 5 minutos</strong>!!!</p>
+
+<p>Los requisitos previos serán tener un par de máquinas corriendo <a href="https://www.docker.com/" target="_blank">Docker</a> y tener cuenta en <a href="https://store.docker.com/" target="_blank">Docker Store</a>.</p>
+
+<p>Tenemos varias imágenes con las que disponer de gestor de base de datos <em>Oracle</em> funcionando en un contenedor. En <a href="https://hub.docker.com/" target="_blank">Docker Hub</a> encontraremos varias. Una de mis preferidas es <a href="https://hub.docker.com/r/sath89/oracle-xe-11g/" target="_blank">sath89/oracle-xe-11g - Docker Hub</a></p>
+
+<p>Con esta imagen obtendremos una Oracle Express Edition 11g Release 2 ejecutándose sobre Ubuntu 14.04.1 LTS</p>
+
+<p>Nos traemos la imagen</p>
+
+<pre><code>docker pull sath89/oracle-xe-11g
+</code></pre>
+
+<p>Arrancamos un contenedor exponiendo el puerto <em>1521</em> sin más. Tenemos alguna opción más pero como demostración nos sirve así.</p>
+
+<pre><code>docker run -d -p 1521:1521 sath89/oracle-xe-11g
+</code></pre>
+
+<p>Mientras se carga la imagen y arranca el contenedor, podemos ir descargando en otra máquina una imagen con el <a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html" target="_blank">Oracle Instant Client</a>.</p>
+
+<p>Esta imagen la obtendremos del <a href="https://store.docker.com/" target="_blank">Docker Store</a> con lo que tendremos que tener una cuenta, y agregar esta imagen a &ldquo;<em>My Content</em>&rdquo;.</p>
+
+<p>Seguimos las instrucciones que nos sugieren para obtener esta imagen <strong>recordando</strong> hacer un <code>docker login</code> previo.</p>
+
+<pre><code>docker pull store/oracle/database-instantclient:12.2.0.1
+</code></pre>
+
+<p>A estas alturas ya tendremos el contenedor con la <em>Oracle Express Edition 11g</em> corriendo con lo que podremos crear un contenedor con la imagen del <em>Oracle Instant Client</em> y utilizarlo para conectarnos con la base de datos.</p>
+
+<pre><code>docker run -ti --rm store/oracle/database-instantclient:12.2.0.1 sqlplus system/oracle@192.168.0.3/xe
+</code></pre>
+
+<p>Todo el proceso en este gif.</p>
+
+<p><a href="https://asciinema.org/a/FSCI1xOhFZqVGvjwVYZlr9jnq" target="_blank"><img src="https://asciinema.org/a/FSCI1xOhFZqVGvjwVYZlr9jnq.png" alt="asciicast" /></a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1"><a href="http://www.tldp.org/HOWTO/Oracle8-on-RH7X-HOWTO-3.html" target="_blank">Oracle 8i on Linux RH7.X Installation HOWTO: Installing Oracle 8i, version 8.1.7</a>
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+
+    
+<footer class='entry-footer-container'>
+  <div class='entry-footer'>
+  
+  </div>
+</footer>
+
+
+  </article>
+  
+<nav class='entry-nav-container'>
+  <div class='entry-nav'><div class='prev-entry'>
+      <a href='/posts/less_f/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ </span>
+        <span class='screen-reader'>: </span>Usando less &#43;F como sustituto de tail -f</a>
+    </div><div class='next-entry'>
+      <a href='/posts/notasconterminalvelocity/'>
+        <span class='screen-reader'>: </span>Notas con Terminal Velocity<span aria-hidden='true'> <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social-menu-container'>
+  <nav aria-label=''>
+    <ul class='social-menu'><li>
+        <a href='https://github.com/juangnzalez' target='_blank' rel='noopener'>
+          <span class='screen-reader'></span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/MunifTanjim' target='_blank' rel='noopener'>
+          <span class='screen-reader'></span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</div>
+        <div class='copyright'>
+  <p>
+        
+          
+        
+      
+
+       &copy; 2017-2018 Juan González 
+  </p>
+</div>
+
+      </div>
+    </footer>
+
+  </div><script src='/assets/js/main.5871befd.js'></script><script src='/js/custom.js'></script></body>
+
+</html>
+
