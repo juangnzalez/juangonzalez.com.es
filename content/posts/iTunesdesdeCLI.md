@@ -8,7 +8,7 @@ draft: true
 
 He de comenzar diciendo que no he encontrado una aplicación que tenga todas las opciones que necesito pero con las dos que os presento en este post consigo resolver bastante bien la tarea.
 
-## iTunes-remote.
+## `iTunes-remote` buscando en nuestra biblioteca.
 
 [mischah/itunes-remote: Control iTunes via CLI](https://github.com/mischah/itunes-remote)
 
