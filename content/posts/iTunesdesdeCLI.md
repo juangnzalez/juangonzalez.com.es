@@ -4,7 +4,7 @@ date: 2018-02-16T17:33:07+01:00
 draft: true
 ---
 
->iTunes es la aplicación que utilizo para manejar mi biblioteca de música. En este post hablaré sobre dos aplicaciones que utilizo para controlar _iTunes_ desde la _Línea de Comandos_.
+>iTunes es la aplicación que utilizo para manejar mi biblioteca de música. En este post hablaré sobre dos aplicaciones que uso para controlar _iTunes_ desde la _Línea de Comandos_.
 
 He de comenzar diciendo que no he encontrado una aplicación que tenga todas las opciones que necesito pero con las dos que os presento en este post consigo resolver bastante bien la tarea.
 
