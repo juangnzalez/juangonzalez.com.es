@@ -74,9 +74,9 @@ Disponemos de `play`, `stop`, `next`, `prev`, `pause`. Todas estas son acciones 
 
 Los parámetros que me son útiles del comando `m itunes` son:
 
- - `status` que nos muestra el artista/título de la canción que se está reproducciendo en ese momento.
+ - `status` que nos muestra el artista/título de la canción que se está reproduciendo en ese momento.
 
- - `itunes col {op,down,#}` con la que controlamos el volumen. Tenemos dividido el volumen en una escala de 0 a 100 como ya comentaba en la descripción de la opción `volume`. Con `vol up` incrementamos el nivel actual en _5_ unidades, con `vol down` redusimos el volumen en _5_ unidades. Por último `m itunes vol #` es equivalente al ya descrito `m volume`. 
+ - `itunes col {op,down,#}` con la que controlamos el volumen. Tenemos dividido el volumen en una escala de 0 a 100 como ya comentaba en la descripción de la opción `volume`. Con `vol up` incrementamos el nivel actual en _5_ unidades, con `vol down` reducimos el volumen en _5_ unidades. Por último `m itunes vol #` es equivalente al ya descrito `m volume`. 
 
 ## Conclusión.
 
