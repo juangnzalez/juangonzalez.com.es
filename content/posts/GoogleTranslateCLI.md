@@ -1,5 +1,5 @@
 ---
-title: "Usando Google Translate desde la línea de comandos"
+title: "Usando Google Translate desde la Línea de comandos"
 date: 2018-03-24T11:54:58+01:00
 draft: true
 ---
