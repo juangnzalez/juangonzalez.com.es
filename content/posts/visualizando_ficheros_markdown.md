@@ -4,8 +4,6 @@ date: 2017-10-04T18:55:17+02:00
 draft: true
 ---
 
-# Visualizando ficheros Markdown
-
 El lenguaje de marcado [Markdown](https://es.wikipedia.org/wiki/Markdown) está diseñado para tener buena legibilidad del fichero origen, pero con poco trabajo podemos __interpretar el fichero y mostrar en consola el resultado mejorando aún más la legibilidad del documento__.
 
 ## Opciones
@@ -20,7 +18,7 @@ pandoc -t html ejemplo.md | lynx -stdin
 pandoc -t html ejemplo.md | w3m -T text/html
 ```
 
-Y otra es utilizar una __aplicación específica__ para este fín como pueden ser 
+Y otra es utilizar una __aplicación específica__ para este fin como pueden ser 
 [mdr](https://github.com/mrchimp/mdr "Markdown reader with color"), [mdless](http://brettterpstra.com/projects/mdless/ "More Markdown, Less less") (del gran [Brett Terpstra](http://brettterpstra.com/)) o [mdv](https://github.com/axiros/terminal_markdown_viewer "Styled Terminal Markdown Viewer").
 
 * [mdr](https://github.com/mrchimp/mdr "Markdown reader with color") es interesante para visualizar ficheros _markdown_ de un repositorio [GitHub](https://github.com/). Por ejemplo `mdr -g mrchimp/mdr` nos mostrará el `README.md` del repositorio `mdr` que el usuario `mrchip` tiene en [GitHub](https://github.com/).
@@ -81,7 +79,7 @@ mdv ejemplo.md
 
 Si lanzamos la aplicación con un `mdv -h` obtendremos un listado de las opciones disponibles. Si lo lanzamos sin parámetros, se mostrará cómo se interpreta un pequeño ejemplo.
 
-Además implementa un monitor de cambios en el fichero con lo que podemos _simular_ un sistema de previsualización _instantánea_ mientras editamos nuestro fichero.
+Además implementa un monitor de cambios en el fichero con lo que podemos _simular_ un sistema de pre visualización _instantánea_ mientras editamos nuestro fichero.
 
 Para terminar un gif como resumen del _post_.
 

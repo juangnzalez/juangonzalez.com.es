@@ -4,8 +4,6 @@ date: 2017-10-11T18:42:08+02:00
 draft: true
 ---
 
-# Googler: Googleando desde la línea de comandos
-
 Del sitio web de [jarun/googler: Google Search, Google Site Search, Google News from the terminal](https://github.com/jarun/googler)
 
 > Googler es una herramienta para consultar en Google (Web y News) desde la línea de comandos.
@@ -35,7 +33,7 @@ Para la instalación en _macos_ podemos optar por [Homebrew](https://brew.sh/ind
 
 ### Integración con nuestra shell
 
-Mi shell es _zsh_ y utilizo _antigen_ para gestionar los módulos con lo que copiaré el [\_googler](https://github.com/jarun/googler/blob/master/auto-completion/zsh/_googler) que proporciona el autor en mi `~/.antigen/bundles/zsh-users/zsh-completions/src` y renicio el `.zcompdump`
+Mi shell es _zsh_ y utilizo _antigen_ para gestionar los módulos con lo que copiaré el [\_googler](https://github.com/jarun/googler/blob/master/auto-completion/zsh/_googler) que proporciona el autor en mi `~/.antigen/bundles/zsh-users/zsh-completions/src` y reinicio el `.zcompdump`
 
 ```
 rm -f ~/.zcompdump; compinit
@@ -49,7 +47,7 @@ Yo tengo `export BROWSER=lynx` en mi `~/.zshrc`
 
 ### Apariencia
 
-Podemos personalizar los colores con los que se mostrarán los resultados asignando una __cadena de 6 caracteres__ a la variable de entorno `GOOGLER_COLORS` o pasándola como párametro (`--colors`) al lanzar la aplicación.
+Podemos personalizar los colores con los que se mostrarán los resultados asignando una __cadena de 6 caracteres__ a la variable de entorno `GOOGLER_COLORS` o pasándola como parámetro (`--colors`) al lanzar la aplicación.
 
 Mi configuración es:
 
@@ -69,7 +67,7 @@ Con `googler -h` o `man googler` obtendremos una pequeña descripción de los pa
 
 Alguna de las opciones que suelo utilizar son:
 
- - Obtener 3 resultados, actualizados en los últmos 5 meses, en castellano y utilizando [Google.es](https://www.google.es/):
+ - Obtener 3 resultados, actualizados en los últimos 5 meses, en castellano y utilizando [Google.es](https://www.google.es/):
 
 ```
 googler -n 3 -t m5 -c es -l es prueba

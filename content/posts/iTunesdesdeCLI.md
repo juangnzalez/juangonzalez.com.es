@@ -50,7 +50,7 @@ Además de estos dos comandos disponemos de los `play`, `stop`, `pause`, `next`,
 
 ## `m-cli` la _navaja suiza_ para macOS 
 
-[rgcr/m-cli:  Swiss Army Knife for macOS](https://github.com/rgcr/m-cli) es un paquete que reune un buen número de pequeñas utilidades para macOS ejecutables desde la línea de comandos.
+[rgcr/m-cli:  Swiss Army Knife for macOS](https://github.com/rgcr/m-cli) es un paquete que reúne un buen número de pequeñas utilidades para macOS ejecutables desde la línea de comandos.
 
 ### Instalación
 

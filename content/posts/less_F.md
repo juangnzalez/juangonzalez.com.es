@@ -4,9 +4,6 @@ date: 2017-09-18T16:24:45+02:00
 draft: true
 ---
 
-Usando less +F como sustituto de tail -f
-========================================
-
 > Cuando necesitamos controlar un fichero de *log* casi siempre usamos `tail -f`. En mi caso ese `tail` a menudo va acompañado de un `grep`, abrir el fichero con un editor ...
 >
 > En este *post* veremos si es posible sustituir estos procesos con `less`.
@@ -36,7 +33,7 @@ En cualquier momento podemos salir al *modo normal* con `CTRL + c`. En este modo
 -	Crear marcas con `m` + `letra`. Volveremos a la posición marcada pulsando `'letra`.
 -	Editar el fichero pulsando `v`. Lanzamos el editor definido en la variable de entorno `VISUAL`.
 
-Volveremos al *modo monitor* pulsando `F`. Obsevamos que si hicimos una búsqueda los coincidentes se siguen resaltando en las nuevas líneas que van apareciendo.
+Volveremos al *modo monitor* pulsando `F`. Observamos que si hicimos una búsqueda los coincidentes se siguen resaltando en las nuevas líneas que van apareciendo.
 
 ### Alternativas
 

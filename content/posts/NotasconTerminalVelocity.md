@@ -4,13 +4,11 @@ date: 2017-09-27T17:33:07+02:00
 draft: true
 ---
 
-# Terminal Velocity. Manejando notas
-
 El sistema que uso para tomar y consultar notas se basa en __ficheros de texto__ con formato [Markdown](https://es.wikipedia.org/wiki/Markdown) alojados en un directorio [Dropbox](https://www.dropbox.com).
 
 Desde hace años utilizo [Notational Velocity](http://notational.net/) o alguno de sus _derivados_. 
 
-Existen bastantes aplicaciones que imitan la funcionalidad de _NV_; he provado muchas y mi preferida es [nvALT](http://brettterpstra.com/projects/nvalt/).
+Existen bastantes aplicaciones que imitan la funcionalidad de _NV_; he probado muchas y mi preferida es [nvALT](http://brettterpstra.com/projects/nvalt/).
 
 La inmensa mayoría de estas aplicaciones basadas en _NV_ son para entornos gráficos. Ando a la caza de una aplicación que funcione en la línea de comandos con funcionalidades parecidas a [Notational Velocity](http://notational.net/) y de momento la que más me gusta y la que últimamente más utilizo es [Terminal Velocity](https://www.seanh.cc/terminal_velocity/).
 

@@ -4,8 +4,6 @@ date: 2017-09-21T17:45:08+02:00
 draft: true
 ---
 
-# Montando un entorno para Oracle SQL - PL/SQL
-
 ## Motivación
 
 Estaba recordando, de tiempos de estudiante, las maniobras que tenía que hacer para conseguir un entorno con el que poder estudiar la asignatura de _Oracle SQL_ y _PL/SQL_. A saber:
