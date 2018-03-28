@@ -18,18 +18,18 @@ La instalación es muy sencilla. Necesitamos el administrador de paquetes [Pip](
 
 Por ejemplo en una instalación de [DietPi](http://dietpi.com/) sobre una [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) empezamos con un: 
 
-```
+```bash
 apt-get install vim python-pip python-dev
 ```
 
 y continuamos con las instrucciones del sitio de la aplicación [Terminal Velocity](https://www.seanh.cc/terminal_velocity/).
 
-```
+```bash
 pip install terminal_velocity
 ```
 Ejecutamos con:
 
-```
+```bash
 terminal_velocity
 ```
 

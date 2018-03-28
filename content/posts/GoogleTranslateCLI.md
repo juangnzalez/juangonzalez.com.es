@@ -23,7 +23,7 @@ frases desde la línea de comandos.
 
 Instalamos la aplicación desde el gestor de paquetes de **Node** [npm](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm)
 
-```
+```bash
 npm install -g trino
 ```
 
@@ -65,7 +65,7 @@ Translator**, **Yandex**, **DeepL Translator** y **Apertium**.
 
 Podemos clonar el repositorio en [**GitHub**](https://github.com/soimort/translate-shell), utilizar algún gestor de paquetes o la opción más rápida, bajarnos el ejecutable en un directorio de nuestro `PATH` desde *git.io/trans*. En mi sistema sería algo como:
 
-```
+```bash
 printenv | grep PATH
 cd /usr/local/bin
 wget git.io/trans
@@ -83,7 +83,7 @@ un *text-to-speech* con el resultado de la traducción que solicitemos.
 
 Este sería el uso básico de la aplicación.
 
-```
+```bash
 trans test
 ```
 
@@ -96,7 +96,7 @@ Para traducir una palabra a un idioma determinado lanzamos la aplicación con
 Podemos solicitar la traducción a más de un idioma concatenando sus
 códigos con un *+*
 
-```
+```bash
 trans :fr+en prueba
 ```
 
@@ -105,7 +105,7 @@ Para traducir una palabra especificando el idioma origen lo hacemos con un
 
 Podemos especificar idioma origen y destino para una traducción con
 
-```
+```bash
 trans es:en prueba
 ```
 
@@ -113,7 +113,7 @@ trans es:en prueba
 
 Para traducir una frase la pasamos a la aplicación entrecomillada
 
-```
+```bash
 trans :en "Una prueba de traducción"
 ```
 
@@ -122,7 +122,7 @@ trans :en "Una prueba de traducción"
 El resultado de la traducción suele ser bastante extenso. Normalmente nos
 servirá con el modo resumen.
 
-```
+```bash
 trans -b :es hola
 ```
 
@@ -131,7 +131,7 @@ trans -b :es hola
 **Google Translate** se puede usar como un diccionario si solicitamos la
 traducción de una palabra al mismo idioma de esta, es decir
 
-```
+```bash
 trans prueba
 trans :es prueba
 ```
@@ -140,7 +140,7 @@ nos devolverá la definición de la palabra *prueba*.
 
 También podemos forzar este comportamiento añadiendo la opción *d*
 
-```
+```bash
 trans -d :es hola
 ```
 
@@ -148,13 +148,13 @@ trans -d :es hola
 
 Podemos solicitar un *text-to-speech* pasando la opción *-play* 
 
-```
+```bash
 trans -play "Una prueba"
 ```
 
 y con *-speak* oiremos la palabra u oración que le pasemos
 
-```
+```bash
 trans -speak "Hello, how are you?"
 ```
 
@@ -162,7 +162,7 @@ trans -speak "Hello, how are you?"
 
 También podemos traducir ficheros de texto y páginas web
 
-```
+```bash
 trans file://test.txt
 
 trans https://www.w3.org/
@@ -175,7 +175,7 @@ vayamos pasando.
 
 Fijamos cuál será el idioma de entrada y cuál será el de salida
 
-```
+```bash
 trans -shell es:en
 ```
 

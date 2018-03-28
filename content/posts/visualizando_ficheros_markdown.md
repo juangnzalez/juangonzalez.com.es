@@ -12,7 +12,7 @@ Una puede ser _interpretar_ el fichero de texto con formato _markdown_ con el co
 
 En una línea sería algo como:
 
-``` shell
+```bash
 pandoc -t html ejemplo.md | lynx -stdin
 
 pandoc -t html ejemplo.md | w3m -T text/html
@@ -33,13 +33,13 @@ El visor utiliza colores, formateo de tablas y resaltado de código para mejorar
 
 Tenemos a nuestra disposición multitud de temas registrados en el `ansi_tables.json` localizado en:
 
-``` shell
+```bash
 pip show mdv | grep Location 
 ```
 
 En este fichero podemos añadir o editar un tema existente. Este es el que utilizo yo:
 
-```
+```bash
    "000.1331": {
         "name": "juangonzalez", 
         "ct": [
@@ -54,7 +54,7 @@ En este fichero podemos añadir o editar un tema existente. Este es el que utili
 
 Podemos ajustar los colores que se utilizarán para cada elemento del documento editando el `markdownviewer.py` tal y como se describe en la ayuda de la aplicación. Mi configuración actual es:
 
-```
+```bash
 # ansi cols (default):
 # R: Red (warnings), L: low visi, BG: background, BGL: background light, C=code
 # H1 - H5 = the theme, the numbers are the ansi color codes:
@@ -67,13 +67,13 @@ CH1, CH2, CH3, CH4, CH5 = H1, H2, H3, H4, H5
 
 La instalación se hará con un:
 
-```
+```bash
 pip install mdv
 ```
 
 Arrancamos con:
 
-```
+```bash
 mdv ejemplo.md
 ```
 

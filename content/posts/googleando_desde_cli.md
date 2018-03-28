@@ -35,7 +35,7 @@ Para la instalación en _macos_ podemos optar por [Homebrew](https://brew.sh/ind
 
 Mi shell es _zsh_ y utilizo _antigen_ para gestionar los módulos con lo que copiaré el [\_googler](https://github.com/jarun/googler/blob/master/auto-completion/zsh/_googler) que proporciona el autor en mi `~/.antigen/bundles/zsh-users/zsh-completions/src` y reinicio el `.zcompdump`
 
-```
+```bash
 rm -f ~/.zcompdump; compinit
 ```
 
@@ -69,13 +69,13 @@ Alguna de las opciones que suelo utilizar son:
 
  - Obtener 3 resultados, actualizados en los últimos 5 meses, en castellano y utilizando [Google.es](https://www.google.es/):
 
-```
+```bash
 googler -n 3 -t m5 -c es -l es prueba
 ```
 
  - Buscar ficheros en formato _pdf_:
 
- ```
+ ```bash
 googler filetype:pdf prueba
  ```
 
@@ -90,7 +90,7 @@ También obtendremos un útil lector de noticias (_News de Google_) en modo _dis
 - Nos registramos en [Mercury Web Parser](https://mercury.postlight.com/web-parser/) e instalamos un _parseador_ para _json_ como por ejemplo [jq](https://stedolan.github.io/jq/)
 - Creamos un pequeño script (`reader`) con los parámetros necesarios para lanzar _reader.py_, le damos permisos de ejecución y nos aseguramos de que esté en un directorio del `PATH`
 
-``` bash
+```bash
 reader.py $1 -k "obtener APP KEY de Mercury Web Parser API" -w 80 | jq -r '[
     (if .title then "# "+.title else empty end),
     (if .author then .author else empty end),
