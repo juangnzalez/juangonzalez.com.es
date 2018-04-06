@@ -2,7 +2,7 @@ baseurl = "http://juangonzalez.com.es"
 languageCode = "es-es"
 DefaultContentLanguage = "es"
 title = "Línea de Comandos"
-theme = "hugo-steam-theme"
+theme = "steam"
 disqusShortname = ""
 # Enable Google Analytics be inserting your tracking code
 googleAnalytics = ""
