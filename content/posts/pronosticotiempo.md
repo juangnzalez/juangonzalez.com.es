@@ -26,7 +26,7 @@ Antes de instalar la aplicación debemos tener resueltas las dependencias.
 
 - [The Go Programming Language](https://golang.org/) instalado en nuestro
   entorno.
-- Lanzaremos la aplicación desde un emulador de terminal con soporte **utf-8*,
+- Lanzaremos la aplicación desde un emulador de terminal con soporte **utf-8**,
   **256 colores**.
 - Acceso a al **API** con la *API key* correspondiente del proveedor que
   elijamos entre los tres posibles:
@@ -40,11 +40,10 @@ Antes de instalar la aplicación debemos tener resueltas las dependencias.
 
 ### [OpenWeatherMap](https://openweathermap.org/)
 
-Creamos una cuenta en [Members](https://home.openweathermap.org/) y accedemos a
-la clave de acceso a la **API** en
-[Members](https://home.openweathermap.org/api_keys).
+Creamos una cuenta en [Members](https://home.openweathermap.org/). Una vez
+*logeados* en la web creamos una clave de acceso a la **API** en la sección *API keys*.
 
-Al registrarnos obtendremos acceso gratuito a la predicción del tiempo para 5
+Con esta *API key* obtendremos acceso gratuito a la predicción del tiempo para 5
 días.
 
 ## Instalación.
